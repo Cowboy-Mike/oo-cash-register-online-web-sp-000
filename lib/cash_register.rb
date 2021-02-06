@@ -1,5 +1,5 @@
 class CashRegister
-  attr_accessor :total, :discount, :items
+  attr_accessor :total, :discount, :items, :last_transaction
   
  
   
@@ -14,6 +14,7 @@ class CashRegister
     qty.times do 
       @items << item 
     end 
+    self.last_transaction = cost * qty 
   end 
   
   def apply_discount
